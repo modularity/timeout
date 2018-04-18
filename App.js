@@ -1,7 +1,8 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
+  TimeOut mobile application
+  This app is for the UCLA Division of Geriatrics(GeroNET).
+  It is a research program tool to faciliate training and communication between volunteers and participants.
+  http://www.geronet.ucla.edu/timeout
  */
 
 import React, { Component } from 'react';
