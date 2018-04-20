@@ -1,63 +1,27 @@
-/**
-  TimeOut mobile application
-  This app is for the UCLA Division of Geriatrics(GeroNET).
-  It is a research program tool to faciliate training and communication between volunteers and participants.
-  http://www.geronet.ucla.edu/timeout
- */
 
 import React, { Component } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View, YellowBox
-} from 'react-native';
-import Navigation from './src/navigation';
-
-import TaskList from './src/components/taskComponents/TaskList';
-import TaskDetails from './src/components/taskComponents/TaskDetails';
-import TaskSurvey from './src/components/taskComponents/TaskSurvey';
-import TaskFeedback from './src/components/taskComponents/TaskFeedback';
-import MessageList from './src/components/messageComponents/MessageList';
-import MessageDetail from './src/components/messageComponents/MessageDetail';
-import CalendarView from './src/components/calendarComponents/CalendarView';
-import CalendarList from './src/components/calendarComponents/CalendarList';
-import CalendarDetail from './src/components/calendarComponents/CalendarDetail';
-import Login from './src/components/registerComponents/Login';
-import Consent from './src/components/registerComponents/Consent';
-import NotEnrolled from './src/components/registerComponents/NotEnrolled';
-import Profile from './src/components/profileComponents/ProfileList';
+import { Alert, AsyncStorage, ActivityIndicator, View } from 'react-native';
+// import other pages to load into navigation objects
+import TaskList from './components/taskComponents/TaskList';
+import TaskDetails from './components/taskComponents/TaskDetails';
+import TaskSurvey from './components/taskComponents/TaskSurvey';
+import TaskFeedback from './components/taskComponents/TaskFeedback';
+import MessageList from './components/messageComponents/MessageList';
+import MessageDetail from './components/messageComponents/MessageDetail';
+import CalendarView from './components/calendarComponents/CalendarView';
+import CalendarList from './components/calendarComponents/CalendarList';
+import CalendarDetail from './components/calendarComponents/CalendarDetail';
+import Login from './components/registerComponents/Login';
+import Consent from './components/registerComponents/Consent';
+import NotEnrolled from './components/registerComponents/NotEnrolled';
+import Profile from './components/profileComponents/ProfileList';
 // import library for navigation objects and routing
 import { StackNavigator, TabNavigator } from 'react-navigation';
 // import FontAwesome icons for navigation objects
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-// hidding know bug: https://github.com/react-navigation/react-navigation/issues/3956
-YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
-
-type Props = {};
-export default class App extends Component<Props> {
-  render() {
-    return <TabNav navigator={this.props.navigation} />
-  }
-}
-
-/*
-<View style={styles.container}>
-  <Text style={styles.welcome}>
-    Welcome to React Native!
-  </Text>
-  <Text style={styles.instructions}>
-    To get started, edit App.js
-  </Text>
-  <Text style={styles.instructions}>
-    {instructions}
-  </Text>
-</View>
-*/
-
-// navigation objects where order matters
-// nested nav objects must be initialized before referencing
+// navigation objects
+// order matters: nested navigation objects must be initialized before they can be referenced
 
 // task tab navigation object
 const TaskNav = StackNavigator({
@@ -166,8 +130,7 @@ const MainNav = StackNavigator({
     },
   Consent: { screen: Consent,
     navigationOptions: ({ navigation }) => ({
-      title: 'Terms and Conditions',
-      headerLeft: null,
+      title: 'Consent',
       headerStyle: { backgroundColor: '#5f97cb' },
       headerTintColor: '#fff',
       headerTitleStyle: {
@@ -180,8 +143,7 @@ const MainNav = StackNavigator({
   },
   NotEnrolled: { screen: NotEnrolled,
     navigationOptions: ({ navigation }) => ({
-      title: 'Account Pending',
-      headerLeft: null,
+      title: '',
       headerStyle: { backgroundColor: '#5f97cb' },
       headerTintColor: '#fff',
       headerTitleStyle: {
@@ -198,17 +160,3 @@ const MainNav = StackNavigator({
     }),
   },
 });
-/*
-navigationOptions: ({ navigation }) => ({
-  title: 'Consent',
-  headerStyle: { backgroundColor: '#5f97cb' },
-  headerTintColor: '#fff',
-  headerTitleStyle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    fontFamily: 'Avenir',
-    color: '#fff',
-  },
-}),
-},
-*/
