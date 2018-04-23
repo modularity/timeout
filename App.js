@@ -42,20 +42,6 @@ export default class App extends Component<Props> {
   }
 }
 
-/*
-<View style={styles.container}>
-  <Text style={styles.welcome}>
-    Welcome to React Native!
-  </Text>
-  <Text style={styles.instructions}>
-    To get started, edit App.js
-  </Text>
-  <Text style={styles.instructions}>
-    {instructions}
-  </Text>
-</View>
-*/
-
 // navigation objects where order matters
 // nested nav objects must be initialized before referencing
 
@@ -198,17 +184,3 @@ const MainNav = StackNavigator({
     }),
   },
 });
-/*
-navigationOptions: ({ navigation }) => ({
-  title: 'Consent',
-  headerStyle: { backgroundColor: '#5f97cb' },
-  headerTintColor: '#fff',
-  headerTitleStyle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    fontFamily: 'Avenir',
-    color: '#fff',
-  },
-}),
-},
-*/
