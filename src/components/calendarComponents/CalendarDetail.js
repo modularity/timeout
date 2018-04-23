@@ -1,3 +1,10 @@
+/**
+  This page lists the TimeOut session for the day selected on CalendarList page.
+  It lists each event(1+) for the given day and the marked availability.
+  Options are 'confirm': green, 'refuse': red, 'edit': gray
+  There are also dots to the left of the event text.
+  The dot is grey when unselected, green for confirmed, red for refused.
+ */
 import React, { Component } from 'react';
 import {
   Platform,

@@ -1,3 +1,6 @@
+/**
+  This page renders the consent information for the TimeOut program.
+ */
 import React, { Component } from 'react';
 import {ScrollView,Text,View,TouchableOpacity,Modal,Alert} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';

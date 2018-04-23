@@ -1,3 +1,6 @@
+/**
+  This page lists all the calendar events that the user has confirmed to their schedule.
+ */
 import React, { Component } from 'react';
 import {ScrollView,FlatList,Text,View,Image,TextInput,TouchableOpacity,Modal,Alert,KeyboardAvoidingView} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';

@@ -1,3 +1,8 @@
+/**
+  This page lists all the tasks assigned to the user.
+  They can include: survey links, session feedback, general tasks.
+  Each item in the list: not attempted, started, completed by self, completed by admin
+ */
 import React, { Component } from 'react';
 import {ScrollView,FlatList,Text,View,Image,ImageBackground,TouchableOpacity,Modal,Alert,KeyboardAvoidingView} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';

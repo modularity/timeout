@@ -1,3 +1,6 @@
+/**
+  Login page with email/password and token generation on server side
+ */
 import React, { Component } from 'react';
 import { Text,TextInput,TouchableOpacity,View,Image,Linking,Alert,Platform,Modal,KeyboardAvoidingView } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';

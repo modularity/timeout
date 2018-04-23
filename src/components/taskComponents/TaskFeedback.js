@@ -1,3 +1,8 @@
+/**
+  This page lists the feedback for a session that the user attended.
+  They are asked to rate the session 1-5 and leave comments.
+  Selecting 'Give Feedback' will update the task to completed by user.
+ */
 import React, { Component } from 'react';
 import {
   Platform,

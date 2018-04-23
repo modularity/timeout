@@ -1,3 +1,8 @@
+/**
+  This page shows detailed information for survey task assigned to the user.
+  It includes: title, description and link.
+  When they return from the webview: they are asked to 'complete task'.
+ */
 import React, { Component } from 'react';
 import {
   Platform,

@@ -1,3 +1,6 @@
+/**
+  This is the profile page that the user can edit.
+ */
 import React, { Component } from 'react';
 import {ScrollView,Text,View,Image,TextInput,TouchableOpacity,Modal,Alert,KeyboardAvoidingView} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';

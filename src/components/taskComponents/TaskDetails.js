@@ -1,3 +1,8 @@
+/**
+  This page lists information: title, description for general activity tasks.
+  There is button for the user to mark 'complete task'.
+  This button will update the task status to completed by self.
+ */
 import React, { Component } from 'react';
 import {
   Platform,

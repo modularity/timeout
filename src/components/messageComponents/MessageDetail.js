@@ -1,3 +1,6 @@
+/**
+  This page lists the message history with person selected on the MessageList page.
+ */
 import React, { Component } from 'react';
 import {ScrollView,Text,View,Image,TextInput,TouchableOpacity,Modal,Alert,KeyboardAvoidingView} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';

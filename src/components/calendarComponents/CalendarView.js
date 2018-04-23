@@ -1,3 +1,10 @@
+/**
+  This page lists all the given calendar events for the TimeOut program(per quarter).
+  The user selects their availability on the CalendarDetail page
+  The calendar legend: yes is blue circle, no is red circle, yellow square is unselected.
+  They can select list to view all the session they have signed up for on the CalendarList page.
+ */
+
 import React, { Component } from 'react';
 import {ScrollView,FlatList,Text,View,Image,TextInput,TouchableOpacity,Modal,Alert,KeyboardAvoidingView} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';

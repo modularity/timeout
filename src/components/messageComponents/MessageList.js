@@ -1,3 +1,6 @@
+/**
+  This page lists all people that the user can and has chatted with in the TimeOut program.
+ */
 import React, { Component } from 'react';
 import {ScrollView,FlatList,Text,View,Image,TextInput,TouchableOpacity,Modal,Alert,KeyboardAvoidingView} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';

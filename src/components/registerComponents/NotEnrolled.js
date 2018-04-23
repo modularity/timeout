@@ -1,3 +1,6 @@
+/**
+  This is a landing page for people that haven't been approved by admin yet.
+ */
 import React, { Component } from 'react';
 import {Platform,StyleSheet,Text,View,Image} from 'react-native';
 import styles from '../../stylesheets/register/notEnrolledStyles';
