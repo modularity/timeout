@@ -6,13 +6,12 @@ module.exports = StyleSheet.create({
     flex: 1,
     //alignItems: 'center',
     //justifyContent: 'center',
-    backgroundColor: '#ecf0f1',
   },
   listContainer: {
     //justifyContent: 'center',
   },
   listHeader: {
-    backgroundColor: '#5f97cb',
+    backgroundColor: '#20a3dd',
     //height: window.height*.2,
     //justifyContent: 'center',
     //alignItems: 'center',
@@ -24,8 +23,8 @@ module.exports = StyleSheet.create({
     alignItems: 'center',
     justifyContent:'center',
   },
-  title: {
-    margin: 10,
+  pageTitle: {
+    margin: 12,
     fontSize: 22,
     fontFamily: 'Avenir',
     textAlign: 'center',
@@ -43,18 +42,18 @@ module.exports = StyleSheet.create({
     //justifyContent: 'flex-start',
     flexWrap: 'wrap'
   },
-  text: {
+  title: {
     fontFamily: 'Avenir',
-    textAlign: 'center',
     fontSize: 22,
     fontWeight: 'bold',
-    color: '#5f97cb',
+    color: '#20a3dd',
   },
-  bodyText: {
+  subTitle: {
     fontFamily: 'Avenir',
-    textAlign: 'center',
+    //textAlign: 'center',
     fontSize: 12,
-    color: '#999',
+    fontWeight: 'bold',
+    color: '#777',
   },
   icon: { //
     //flexDirection: 'column',
@@ -63,6 +62,6 @@ module.exports = StyleSheet.create({
   },
   separator: {
     borderWidth: 0.5,
-    borderColor: '#5f97cb',
+    borderColor: '#20a3dd',
   },
 });

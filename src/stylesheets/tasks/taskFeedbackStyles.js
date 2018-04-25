@@ -63,6 +63,15 @@ module.exports = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  starContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  star: {
+    padding: 8,
+    margin: 8
+  },
   confirmBtn: {
     alignSelf: 'center',
     backgroundColor: '#00C853',

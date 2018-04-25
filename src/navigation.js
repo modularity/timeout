@@ -115,7 +115,7 @@ const TabNav = TabNavigator({
     activeTintColor: '#fff',
     activeBackgroundColor: '#fdba31',
     inactiveTintColor: '#fff',
-    inactiveBackgroundColor: '#5f97cb'
+    inactiveBackgroundColor: '#20a3dd'
   },
   //swipeEnabled: true,
   //animationEnabled: true,
@@ -131,7 +131,7 @@ const MainNav = StackNavigator({
   Consent: { screen: Consent,
     navigationOptions: ({ navigation }) => ({
       title: 'Consent',
-      headerStyle: { backgroundColor: '#5f97cb' },
+      headerStyle: { backgroundColor: '#20a3dd' },
       headerTintColor: '#fff',
       headerTitleStyle: {
         fontSize: 20,
@@ -144,7 +144,7 @@ const MainNav = StackNavigator({
   NotEnrolled: { screen: NotEnrolled,
     navigationOptions: ({ navigation }) => ({
       title: '',
-      headerStyle: { backgroundColor: '#5f97cb' },
+      headerStyle: { backgroundColor: '#20a3dd' },
       headerTintColor: '#fff',
       headerTitleStyle: {
         fontSize: 20,

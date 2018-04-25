@@ -57,7 +57,7 @@ module.exports =  StyleSheet.create({
     textAlign: 'center',
     borderRadius: 30,
     borderWidth: 2,
-    borderColor: '#5f97cb',
+    borderColor: '#20a3dd',
     marginTop: 10,
     padding: 16,
     fontSize: 18,
@@ -79,7 +79,7 @@ module.exports =  StyleSheet.create({
   },
   avatar: {
     borderRadius: 100,
-    borderColor: '#5f97cb',
+    borderColor: '#20a3dd',
     borderWidth: 5,
     margin: 10,
     width: 200,

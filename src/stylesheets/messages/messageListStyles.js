@@ -12,7 +12,7 @@ module.exports = StyleSheet.create({
     //justifyContent: 'center',
   },
   listHeader: {
-    backgroundColor: '#5f97cb',
+    backgroundColor: '#20a3dd',
     //height: window.height*.2,
     //justifyContent: 'center',
     //alignItems: 'center',
@@ -48,11 +48,11 @@ module.exports = StyleSheet.create({
     textAlign: 'center',
     fontSize: 22,
     fontWeight: 'bold',
-    color: '#5f97cb',
+    color: '#20a3dd',
   },
   bodyText: {
     fontFamily: 'Avenir',
-    textAlign: 'center',
+    //textAlign: 'center',
     fontSize: 12,
     color: '#999',
   },
@@ -64,6 +64,6 @@ module.exports = StyleSheet.create({
   },
   separator: {
     borderWidth: 0.5,
-    borderColor: '#5f97cb',
+    borderColor: '#20a3dd',
   },
 });

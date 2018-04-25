@@ -3,6 +3,7 @@
   This app is for the UCLA Division of Geriatrics(GeroNET).
   It is a research program tool to faciliate training and communication between volunteers and participants.
   http://www.geronet.ucla.edu/timeout
+
  */
 
 import React, { Component } from 'react';
@@ -54,19 +55,43 @@ const TaskNav = StackNavigator({
     },
   TaskDetails: { screen: TaskDetails,
     navigationOptions: ({ navigation }) => ({
-      header: null,
-      }),
-    },
+      title: 'Task Details',
+      headerStyle: { backgroundColor: '#20a3dd' },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        fontFamily: 'Avenir',
+        color: '#fff',
+      },
+    }),
+  },
   TaskSurvey: { screen: TaskSurvey,
     navigationOptions: ({ navigation }) => ({
-      header: null,
-      }),
-    },
+      title: 'Task Survey',
+      headerStyle: { backgroundColor: '#20a3dd' },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        fontFamily: 'Avenir',
+        color: '#fff',
+      },
+    }),
+  },
   TaskFeedback: { screen: TaskFeedback,
     navigationOptions: ({ navigation }) => ({
-      header: null,
-      }),
-    },
+      title: 'Task Feedback',
+      headerStyle: { backgroundColor: '#20a3dd' },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        fontFamily: 'Avenir',
+        color: '#fff',
+      },
+    }),
+  },
 });
 
 // message tab navigation object
@@ -135,9 +160,9 @@ const TabNav = TabNavigator({
   }, {
   tabBarOptions: {
     activeTintColor: '#fff',
-    activeBackgroundColor: '#fdba31',
+    activeBackgroundColor: '#3284be',
     inactiveTintColor: '#fff',
-    inactiveBackgroundColor: '#5f97cb'
+    inactiveBackgroundColor: '#20a3dd'
   },
   //swipeEnabled: true,
   //animationEnabled: true,
@@ -154,7 +179,7 @@ const MainNav = StackNavigator({
     navigationOptions: ({ navigation }) => ({
       title: 'Terms and Conditions',
       headerLeft: null,
-      headerStyle: { backgroundColor: '#5f97cb' },
+      headerStyle: { backgroundColor: '#20a3dd' },
       headerTintColor: '#fff',
       headerTitleStyle: {
         fontSize: 20,
@@ -168,7 +193,7 @@ const MainNav = StackNavigator({
     navigationOptions: ({ navigation }) => ({
       title: 'Account Pending',
       headerLeft: null,
-      headerStyle: { backgroundColor: '#5f97cb' },
+      headerStyle: { backgroundColor: '#20a3dd' },
       headerTintColor: '#fff',
       headerTitleStyle: {
         fontSize: 20,
