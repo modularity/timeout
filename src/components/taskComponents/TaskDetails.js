@@ -20,7 +20,7 @@ export default class TaskDetails extends Component<Props> {
 
     return (
       <View style={styles.container}>
-      <ScrollView>
+      <ScrollView style={styles.innerContainer}>
         <Text style={styles.title}>{params.title}</Text>
         <Text style={styles.subTitle}>{params.subTitle}</Text>
         <View style ={styles.avatarContainer}>
@@ -42,5 +42,44 @@ export default class TaskDetails extends Component<Props> {
     this.props.navigation.navigate('TaskList', {
       taskDone: title
     });
+    //this.props.navigation.goBack();
+    //this.props.navigation.state.params.onSelect({ selected: true })
+    this.postTaskDone();
+  }
+
+  // send formData to server
+  // placeholder for web service, update params and url
+  postTaskDone() {
+    //console.warn('postFeedback', this.getFormData());
+  /*
+    fetch(url, {
+      method: 'post',
+      body: this.getFormData()
+    })
+    .then((response) => {
+      //console.log('response', response);
+      if (response.status === 200) {
+        response.json().then((data) => {
+          if (data.errmsg) {
+            //this.setState({showMsgModal: true, errMsg:'Server error'});
+            //firebase.analytics().logEvent('server_sent_errMsg');
+          }
+        })
+      } else {
+        //this.setState({showMsgModal: true, errMsg: 'Server error'});
+        //firebase.analytics().logEvent('recording_server_non200_error');
+      }
+    })
+    .catch((error) => {
+      //console.log('post err', error);
+      //this.setState({showMsgModal: true, errMsg: 'Server error'});
+      //firebase.analytics().logEvent('recording_server_error');
+    });
+    */
+  }
+  getFormData() {
+    let formData = new FormData();
+    formData.append('surveyDone', true);
+    return formData;
   }
 }

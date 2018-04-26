@@ -133,7 +133,7 @@ const TabNav = TabNavigator({
             navigationOptions: {
               tabBarLabel: 'Tasks',
               tabBarIcon: ({ tintColor }) =>
-                  <Icon name="tasks" size={25} color={tintColor} />
+                  <Icon name="th-list" size={25} color={tintColor} />
             }
           },
   MessageNav: { screen: MessageNav,

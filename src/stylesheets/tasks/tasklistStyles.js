@@ -4,10 +4,10 @@ var window = Dimensions.get('window');
 module.exports = StyleSheet.create({
   container: {
     flex: 1,
-    //alignItems: 'center',
-    //justifyContent: 'center',
+    backgroundColor: '#fff',
   },
   listContainer: {
+    backgroundColor: '#fff',
     //justifyContent: 'center',
   },
   listHeader: {

@@ -5,6 +5,9 @@ var btnWidth = window.width*.6;
 module.exports = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#fff',
+  },
+  innerContainer: {
     margin: 25,
   },
   listHeader: {
@@ -49,7 +52,7 @@ module.exports = StyleSheet.create({
     marginBottom: 15,
     fontSize: 14,
     fontFamily: 'Avenir',
-    color: '#34495e',
+    color: '#777',
   },
   avatar: {
     borderRadius: 100,
