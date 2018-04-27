@@ -103,9 +103,17 @@ const MessageNav = StackNavigator({
     },
   MessageDetail: { screen: MessageDetail,
     navigationOptions: ({ navigation }) => ({
-      header: null,
-      }),
-    },
+      title: 'Message Detail',
+      headerStyle: { backgroundColor: '#20a3dd' },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        fontFamily: 'Avenir',
+        color: '#fff',
+      },
+    }),
+  },
 });
 
 // calendar tab navigation object

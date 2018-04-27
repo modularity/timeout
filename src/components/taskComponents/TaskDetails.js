@@ -39,10 +39,14 @@ export default class TaskDetails extends Component<Props> {
   // will call API with the task update
   // then update the selected props on the TaskList and route back to that page
   completedTask(title) {
+/*
     this.props.navigation.navigate('TaskList', {
-      taskDone: title
+      taskDone: 'done'
     });
-    //this.props.navigation.goBack();
+*/
+    this.props.navigation.setParams({ taskDone: 'done' })
+    this.props.navigation.goBack();
+
     //this.props.navigation.state.params.onSelect({ selected: true })
     this.postTaskDone();
   }

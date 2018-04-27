@@ -1,5 +1,7 @@
 import {StyleSheet, Dimensions} from 'react-native';
 var window = Dimensions.get('window');
+var btnWidth = window.width*.6;
+var btnHeight = window.width*.12;
 
 module.exports =  StyleSheet.create({
   viewInfoBtn: {
@@ -19,30 +21,28 @@ module.exports =  StyleSheet.create({
   },
   outerContainer: {
     flex: 1,
-    //backgroundColor: '#338ce0',
-    backgroundColor: '#ecf0f1'
+    backgroundColor: '#20a3dd',
   },
   logo: {
-    width: 100,
-    height: 100,
+    width: window.width*.6,
+    height: window.height*.17,
+    resizeMode: 'center',
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
+    marginTop: btnHeight,
   },
   container: {
     flex: 1,
     alignItems: 'center',
-    //justifyContent: 'center',
-    backgroundColor: '#ecf0f1',
+    justifyContent: 'space-around',
+    backgroundColor: '#20a3dd',
   },
   loginContainer: {
     width: window.width*.7,
     height: window.height*.6,
     //justifyContent: 'center',
     alignItems: 'center'
-  },
-  inputContainer: {
-    width: window.width*.7,
   },
   inputSection: {
     flexDirection: 'row',
@@ -52,7 +52,7 @@ module.exports =  StyleSheet.create({
     borderWidth: .5,
     borderColor: 'rgba(0,0,0,0.2)',
     height: 40,
-    borderRadius: 10,
+    borderRadius: 5,
     margin: 8
   },
   inputImage: {
@@ -64,25 +64,55 @@ module.exports =  StyleSheet.create({
     alignItems: 'center'
   },
   input: {
-    width: 200,
-    height: 44,
+    width: window.width*.5,
+    height: btnHeight,
     padding: 8,
   },
+  buttonContainer: {
+    margin: 10
+  },
+  pageText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    fontFamily: 'Avenir',
+    textAlign: 'center',
+    color: '#fff',
+  },
+  confirmBtn: {
+    backgroundColor: '#3284be',
+    width: btnWidth,
+    height: btnHeight,
+    borderRadius: 20,
+    padding: 8,
+  },
+  resetBtn: {
+    margin: 10
+  },
+  msgText: {
+    width: Dimensions.get('window').width,
+    fontSize: 14,
+    textAlign: 'center',
+    alignSelf: 'center',
+    padding: 5,
+    backgroundColor: '#f1592a',
+    color: '#fff'
+  },
   modalMsgContainer: {
+   marginTop: 20,
    flex: .6,
    justifyContent:'center',
    alignItems: 'center',
    alignSelf: 'center',
  },
  modalClose: {
-   width: Dimensions.get('window').width*.8,
-   backgroundColor: '#f1592a',
+   width: window.width*.8,
+   backgroundColor: '#fdba33',
    padding: 5,
  },
  modalHeader: {
    flex: .6,
-   width: Dimensions.get('window').width*.8,
-   backgroundColor: '#f1592a',
+   width: window.width*.8,
+   backgroundColor: '#fdba33',
    justifyContent: 'center',
    alignItems: 'center',
  },
@@ -97,7 +127,7 @@ module.exports =  StyleSheet.create({
    borderRadius:100,
  },
  modalTxtContainer: {
-   width: Dimensions.get('window').width*.8,
+   width: window.width*.8,
    backgroundColor: '#ecf0f1',
    flex: .3,
    justifyContent: 'center',
@@ -110,25 +140,7 @@ module.exports =  StyleSheet.create({
     textAlign: 'center',
     alignSelf: 'center',
     margin: 3,
-    color: '#34495e',
+    color: '#777',
     backgroundColor: 'transparent',
-  },
-  confirmBtn: {
-    backgroundColor: '#b3d1f2',
-    borderRadius: 15,
-    padding: 8,
-    margin: 8
-  },
-  resetBtn: {
-    margin: 10
-  },
-  msgText: {
-    width: Dimensions.get('window').width,
-    fontSize: 14,
-    textAlign: 'center',
-    alignSelf: 'center',
-    padding: 5,
-    backgroundColor: '#f1592a',
-    color: '#fff'
   },
 });

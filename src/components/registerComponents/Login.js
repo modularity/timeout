@@ -16,7 +16,7 @@ export default class Login extends Component<Props> {
     this.state = {
       email: '',
       password: '',
-      message: '',
+      errMsg: 'testing',
       showMsgModal: false,
     }
     //firebase.analytics().setCurrentScreen('Login');
@@ -29,29 +29,28 @@ export default class Login extends Component<Props> {
     return (
     <View style={styles.outerContainer}>
       <StatusBarBackground />
-        {this.renderMessage()}
-        <InfoBtn page='Login' />
-        <View style={styles.container}>
+      {this.renderMessage()}
+      <InfoBtn page='Login' />
+      <View style={styles.container}>
+        <Image style={styles.logo} source={require('../../images/timeout_logo_app.png')} />
         <KeyboardAvoidingView behavior='position' keyboardVerticalOffset={keyboardVerticalOffset}>
-          <Image style={styles.logo} source={require('../../images/puppy-2.jpg')} />
-          <Text style={styles.h1Text}>TimeOut</Text>
-          <View style={styles.loginContainer}>
-            <View>
-              {this.renderInputFields()}
-              <TouchableOpacity onPress={ () => this.loginPressed()}
-                                style={styles.confirmBtn}>
-                  <Text style={styles.h1Text}>Log In</Text>
-              </TouchableOpacity>
-            </View>
+        <View style={styles.loginContainer}>
+          {this.renderInputFields()}
+          <View style={styles.buttonContainer}>
+            <TouchableOpacity onPress={ () => this.loginPressed()}
+                              style={styles.confirmBtn}>
+                <Text style={styles.pageText}>Log In</Text>
+            </TouchableOpacity>
           </View>
-        </KeyboardAvoidingView>
         </View>
+        </KeyboardAvoidingView>
+      </View>
     </View>
     );
   }
 
   renderInputFields() {
-    return (<View style={styles.inputContainer}>
+    return (<View>
       <View style={styles.inputSection}>
         <Icon name="user-o" style={styles.inputImage}/>
         <TextInput
@@ -90,17 +89,17 @@ export default class Login extends Component<Props> {
            onRequestClose={() => this.setState({showMsgModal: false}) }>
       <View style={styles.modalMsgContainer}>
         <View style={styles.modalClose}>
-          <TouchableOpacity onPress={() => this.setState({showMsgModal: false}) }>
+          <TouchableOpacity onPress={() => this.setState({showMsgModal: false, postRecPreGraph: false}) }>
             <Icon name="times" size={25} color="#ecf0f1"/>
           </TouchableOpacity>
         </View>
         <View style={styles.modalHeader}>
           <View style={styles.infoRadius}>
-            <Icon name="info" size={60} color="#f1592a"/>
+            <Icon name="exclamation-triangle" size={60} color="#777"/>
           </View>
         </View>
         <View style={styles.modalTxtContainer}>
-          <Text style={styles.h1Text}>{this.state.message}</Text>
+          <Text style={styles.h1Text}>{this.state.errMsg}</Text>
         </View>
       </View>
     </Modal>);

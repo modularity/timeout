@@ -52,7 +52,6 @@ module.exports = StyleSheet.create({
   },
   bodyText: {
     fontFamily: 'Avenir',
-    //textAlign: 'center',
     fontSize: 12,
     color: '#999',
   },

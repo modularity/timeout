@@ -26,9 +26,11 @@ export default class MessageDetail extends Component<Props> {
     return (
       <View style={styles.container}>
         <StatusBarBackground />
-        <Text style={styles.welcome}>
-          MessageList
-        </Text>
+        <ScrollView>
+        {this.renderRecieverMsg()}
+        {this.renderSenderMsg()}
+        {this.renderRecieverMsg()}
+        </ScrollView>
         <View style={styles.footer}>
           <TextInput
             value={this.state.typing}
@@ -37,7 +39,41 @@ export default class MessageDetail extends Component<Props> {
             underlineColorAndroid="transparent"
             placeholder="Type something nice"
           />
+          <Icon name={"share-square"} color={"#00C853"} size={35} style={styles.sendIcon}/>
         </View>
+      </View>
+    );
+  }
+
+  renderMsgChain() {
+    var messageHistory="";
+    /*
+    messageHistory.map((x,i) => {
+      //
+    });
+    */
+  }
+
+  renderSenderMsg() {
+    return (
+      <View style={styles.senderContainer}>
+      <Text style={styles.senderText}>
+      You want your tree to have some character.
+      Make it special.
+      I started painting as a hobby when I was little.
+      </Text>
+      </View>
+    );
+  }
+
+  renderRecieverMsg() {
+    return (
+      <View style={styles.recieverContainer}>
+      <Text style={styles.recieverText}>
+      You want your tree to have some character.
+      Make it special.
+      I started painting as a hobby when I was little.
+      </Text>
       </View>
     );
   }

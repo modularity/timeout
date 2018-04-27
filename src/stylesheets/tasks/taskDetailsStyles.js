@@ -9,24 +9,7 @@ module.exports = StyleSheet.create({
   },
   innerContainer: {
     margin: 25,
-  },
-  listHeader: {
-    backgroundColor: '#00BCD4',
-  },
-  imageHeader:{
-    flexGrow:1,
-    height:window.height*.2,
-    width:null,
-    alignItems: 'center',
-    justifyContent:'center'
-  },
-  divider:{
-    borderWidth: 0.5,
-    borderColor: '#009688'
-  },
-  listContent: {
-    flex: 1,
-    flexDirection: 'row',
+    backgroundColor: '#fff',
   },
   title: {
     fontFamily: 'Avenir',

@@ -6,9 +6,13 @@
  */
 
 #import <UIKit/UIKit.h>
+#import <RCTOneSignal.h> // OneSignal push notification integration
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (nonatomic, strong) UIWindow *window;
+
+// OneSignal push notification integration
+@property (strong, nonatomic) RCTOneSignal* oneSignal;
 
 @end

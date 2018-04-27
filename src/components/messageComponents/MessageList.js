@@ -17,9 +17,9 @@ export default class MessageList extends Component<Props> {
     this.state = {
       selected: (new Map(): Map<string, boolean>),
       data: [
-        {name:'Farnaz', message:'message0', id: "0"},
-        {name:'Jermaine', message:'message1', id: "1"},
-        {name:'Usha', message:'message2', id: "2"}
+        {name:'Mabel Weathersby', message:'Cool!', id: "0"},
+        {name:'Phineas Smith', message:'I am glad to help', id: "1"},
+        {name:'Jun-fan Lee', message:'Great! ', id: "2"},
       ],
       emptyData: [],
     }
@@ -30,12 +30,7 @@ export default class MessageList extends Component<Props> {
 
   _onPressItem = (id: string) => {
     // updater functions are preferred for transactional updates
-    this.setState((state) => {
-      // copy the map rather than modifying state.
-      const selected = new Map(state.selected);
-      selected.set(id, !selected.get(id)); // toggle
-      return {selected};
-    });
+    this.props.navigation.navigate('MessageDetail');
   };
 
   _renderItem = ({item}) => (
@@ -49,14 +44,6 @@ export default class MessageList extends Component<Props> {
   );
 
   renderHeader = () => {
-    /*
-    return (<View style={styles.listHeader}>
-              <ImageBackground style={styles.imageHeader}
-                source={{uri: 'https://res.cloudinary.com/circledeluz-org/image/upload/v1440038955/bg_lfqlrn.png'}}>
-              <Text style={styles.name}>Tasks</Text>
-              </ImageBackground>
-            </View>);
-            */
     return (<View style={styles.listHeader}>
               <Text style={styles.title}>Messages</Text>
             </View>);

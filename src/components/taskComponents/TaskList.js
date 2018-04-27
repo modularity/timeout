@@ -33,21 +33,27 @@ export default class TaskList extends Component<Props> {
     }
     //firebase.analytics().setCurrentScreen('Login');
   }
-
-  componentDidMount() {
+/*
+  static getDerivedStateFromProps(nextProps, prevState) {
       //this.checkForDoneTasks(params);
-      const { params } = this.props.navigation.state;
-      // could check for null first
-      const taskTitle = params ? params.taskDone : null;
-      if (taskTitle !== null) {
-        var {taskList} = this.state;
+      const { params } = nextProps.navigation.state;
+      const taskDone = params ? params.taskDone : null;
+      console.warn('taskDone', taskDone);
+      if (taskDone === 'done') {
+        var {taskList} = prevState;
+        const taskTitle = params ? params.title : null;
+        console.warn('taskTitle', taskTitle);
         taskList.map((x) => {
           if (x.title === taskTitle) x.status = 'done'
         });
         this.setState({taskList});
       }
+      return {
+           ...prevState,
+           ...nextProps
+        };
     };
-
+*/
   _keyExtractor = (item) => item.id;
 
   _onPressItem = (id: string) => {
