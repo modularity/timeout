@@ -33,8 +33,10 @@ import { StackNavigator, TabNavigator } from 'react-navigation';
 // import FontAwesome icons for navigation objects
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-// hidding know bug: https://github.com/react-navigation/react-navigation/issues/3956
-YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
+// hiding known library bugs
+// https://github.com/react-navigation/react-navigation/issues/3956
+// https://github.com/geektimecoil/react-native-onesignal/pull/446
+YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader', 'Module RCTOneSignal']);
 
 type Props = {};
 export default class App extends Component<Props> {
