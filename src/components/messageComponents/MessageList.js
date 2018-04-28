@@ -17,9 +17,12 @@ export default class MessageList extends Component<Props> {
     this.state = {
       selected: (new Map(): Map<string, boolean>),
       data: [
-        {name:'Mabel Weathersby', message:'Cool!', id: "0"},
-        {name:'Phineas Smith', message:'I am glad to help', id: "1"},
-        {name:'Jun-fan Lee', message:'Great! ', id: "2"},
+        {names:['Mabel Weathersby', 'Chip Weathersby'], message:'Cool!', id: "0",
+          image: 'https://i.pinimg.com/originals/d3/69/d9/d369d9056795f553e244da66e8297cca.png'},
+        {names:['Phineas Smith', 'Rose Lee-Smith'], message:'I am glad to help', id: "1",
+          image: 'https://cdn0.iconfinder.com/data/icons/user-pictures/100/matureman2-512.png'},
+        {names:['Jun-fan Lee', 'Edward Lao'], message:'Great! ', id: "2",
+          image: 'https://cdn4.iconfinder.com/data/icons/icoflat-2/512/avatar-512.png'},
       ],
       emptyData: [],
     }
@@ -29,8 +32,18 @@ export default class MessageList extends Component<Props> {
   _keyExtractor = (item) => item.id;
 
   _onPressItem = (id: string) => {
-    // updater functions are preferred for transactional updates
-    this.props.navigation.navigate('MessageDetail');
+    var messageThread = this.state.data[id];
+    var names = messageThread.names;
+    var namesStr = names[0];
+/*
+    for (let i = 1; i < names.length; i++) {
+      namesStr += names[i].name;
+    }
+*/
+    this.props.navigation.navigate('MessageDetail', {
+      messageData: messageThread,
+      nameList: namesStr
+    });
   };
 
   _renderItem = ({item}) => (
@@ -38,8 +51,8 @@ export default class MessageList extends Component<Props> {
       id={item.id}
       onPressItem={this._onPressItem}
       selected={!!this.state.selected.get(item.id)}
-      name={item.name}
-      message={item.message}
+      names={item.names}
+      image={item.image}
     />
   );
 
@@ -88,16 +101,18 @@ class MessageItem extends React.PureComponent {
   render() {
     //const iconName = this.props.selected ? "check-circle" : 'circle-o';
     //const iconColor = this.props.selected ? "#3ecb6d" : "#5f97cb";
+    var avatar = <Image style={styles.avatar} source= {{uri: this.props.image}} />;
+    if (this.props.image === '') avatar = <Icon name={"user-o"} color={"#5f97cb"} size={30} style={styles.icon}/>;
     return (
       <TouchableOpacity onPress={this._onPress}>
         <View style={styles.itemContainer}>
-          <Icon name={"user-o"} color={"#5f97cb"} size={30} style={styles.icon}/>
+          <Image style={styles.avatar} source= {{uri: this.props.image}} />
           <View styles={styles.itemTextContainer}>
             <Text style={styles.text}>
-              {this.props.name}
+              {this.props.names[0]}
             </Text>
             <Text style={styles.bodyText}>
-              {this.props.message}
+              {this.props.names[1]}
             </Text>
           </View>
         </View>

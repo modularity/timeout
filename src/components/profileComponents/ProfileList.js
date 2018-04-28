@@ -13,11 +13,10 @@ type Props = {};
 export default class ProfileList extends Component<Props> {
   render() {
     return (
-      <View>
-        <StatusBarBackground />
+      <View style={styles.container}>
         <Profile
           name={"John Smith"}
-          role={"www.jsmith.com"}
+          role={"Student Volunteer"}
           bio={"I like dogs"}
           />
       </View>
@@ -34,7 +33,7 @@ class Profile extends Component<Props> {
           showModal: false,
           name: props.name,
           role: props.role,
-          bio: props.bio
+          bio: props.bio,
       }
       this.data = {
         name: this.state.name,
@@ -44,40 +43,57 @@ class Profile extends Component<Props> {
   }
   render() {
     return (
-      <View style={styles.container}>
-        <View>
-          {this.renderHeader()}
-          <KeyboardAvoidingView style={styles.container} behavior="padding">
-            <View style ={styles.avatarContainer}>
-              <Image style={styles.avatar} source= {{uri: 'https://www.acqueon.com/wp-content/uploads/2017/08/avatar-image.png'}} />
-            </View>
-            <View style={styles.attributeContainer}>
-              <Text style={styles.attributeTitle}>Name</Text>
-              <TextInput style={this.state.editable? styles.editText : styles.attributeText}
-                        editable={this.state.editable}
-                        value={this.state.name}
-                        onChangeText={this.handleChangeName}/>
-            </View>
-            <View style={styles.attributeContainer}>
-              <Text style={styles.attributeTitle}>Role</Text>
-              <TextInput style={this.state.editable? styles.editText : styles.attributeText}
-                         editable={this.state.editable}
-                         value={this.state.role} />
-            </View>
-            <View style={styles.attributeContainer}>
-              <Text style={styles.attributeTitle}>Bio</Text>
-              <TextInput style={this.state.editable? styles.editText : styles.attributeText}
-                        editable={this.state.editable}
-                        multiline={true}
-                        value={this.state.bio}
-                        onChangeText={this.handleChangeBio} />
-            </View>
-            {this._renderCancel()}
-            {this._renderModalPopup()}
-          </KeyboardAvoidingView>
-        </View>
+      <View>
+      <StatusBarBackground />
+        {this.renderHeader()}
+        <KeyboardAvoidingView style={styles.container} behavior="padding">
+          <View style ={styles.avatarContainer}>
+            <Image style={styles.avatar} source= {{uri: 'https://www.acqueon.com/wp-content/uploads/2017/08/avatar-image.png'}} />
+          </View>
+          <View style={styles.attributeContainer}>
+            <Text style={styles.attributeTitle}>Name</Text>
+            <TextInput style={this.state.editable? styles.editText : styles.attributeText}
+                      editable={this.state.editable}
+                      value={this.state.name}
+                      onChangeText={this.handleChangeName}/>
+          </View>
+          <View style={styles.attributeContainer}>
+            <Text style={styles.attributeTitle}>Role</Text>
+            <TextInput style={this.state.editable? styles.editText : styles.attributeText}
+                       editable={this.state.editable}
+                       value={this.state.role} />
+          </View>
+          <View style={styles.attributeContainer}>
+            <Text style={styles.attributeTitle}>Bio</Text>
+            <TextInput style={this.state.editable? styles.editText : styles.attributeText}
+                      editable={this.state.editable}
+                      multiline={true}
+                      value={this.state.bio}
+                      onChangeText={this.handleChangeBio} />
+          </View>
+          {this.renderFooter()}
+          {this._renderCancel()}
+          {this._renderModalPopup()}
+        </KeyboardAvoidingView>
       </View>
     );
+  }
+
+  renderFooter() {
+    return(<View style={styles.footerContainer}>
+      <View style={styles.footer}>
+        <TouchableOpacity style={styles.footerBtn} onPress={() => console.warn('contact us')}>
+          <Icon name={'mobile'} size={25} style={{ color: '#20a3dd'}} />
+          <Text style={styles.footerText}>Contact Us</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.footer}>
+        <TouchableOpacity style={styles.footerBtn} onPress={() => console.warn('terms of use')}>
+          <Icon name={'book'} size={25} style={{ color: '#20a3dd'}} />
+          <Text style={styles.footerText}>Terms of Use</Text>
+        </TouchableOpacity>
+      </View>
+    </View>);
   }
 
   onPressEdit = () => {
@@ -103,15 +119,11 @@ class Profile extends Component<Props> {
   };
 
   renderHeader() {
-    return<View>
+    return(<View style={styles.editSaveBtn}>
       <TouchableOpacity onPress={this.state.selected? this.onPressSave : this.onPressEdit}>
-      <Icon
-          name={this.state.selected? 'save' : 'pencil'}
-          size={25}
-          style={{ color: '#fff'}}
-      />
+        <Icon name={this.state.selected? 'save' : 'pencil'} size={25} style={{ color: '#20a3dd'}} />
       </TouchableOpacity>
-    </View>
+    </View>);
   }
   _renderModalPopup = () => {
     if (this.state.showModal) {
@@ -146,7 +158,7 @@ class Profile extends Component<Props> {
       showCancel: !prev.showCancel,
       name: this.data.name,
       role: this.data.role,
-      bio: this.data.bio
+      bio: this.data.bio,
     }));
   };
 

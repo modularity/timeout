@@ -105,7 +105,7 @@ const MessageNav = StackNavigator({
     },
   MessageDetail: { screen: MessageDetail,
     navigationOptions: ({ navigation }) => ({
-      title: 'Message Detail',
+      title: `${navigation.state.params.nameList}`,
       headerStyle: { backgroundColor: '#20a3dd' },
       headerTintColor: '#fff',
       headerTitleStyle: {

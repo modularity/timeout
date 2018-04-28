@@ -1,6 +1,7 @@
 import { Dimensions, StyleSheet } from 'react-native';
 var window = Dimensions.get('window');
 
+var avatorWidth = window.width*.1;
 module.exports = StyleSheet.create({
   container: {
     flex: 1,
@@ -60,6 +61,14 @@ module.exports = StyleSheet.create({
     justifyContent: 'flex-end',
     alignItems: 'center',
     marginRight: 10,
+  },
+  avatar: {
+    borderRadius: avatorWidth/2,
+    borderColor: '#20a3dd',
+    borderWidth: 1,
+    margin: 10,
+    width: avatorWidth,
+    height: avatorWidth
   },
   separator: {
     borderWidth: 0.5,

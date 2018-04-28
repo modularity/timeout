@@ -1,6 +1,7 @@
 import { Dimensions, StyleSheet } from 'react-native';
 var window = Dimensions.get('window');
-var bubbleWidth = window.width*.85;
+var bubbleWidth = window.width*.8;
+var avatorWidth = window.width*.1;
 module.exports = StyleSheet.create({
   container: {
     flex: 1,
@@ -18,6 +19,10 @@ module.exports = StyleSheet.create({
     color: 'white',
     backgroundColor: '#00C853'
   },
+  messageSection: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
   senderContainer: {
     backgroundColor: '#20a3dd',
     width: bubbleWidth,
@@ -30,6 +35,18 @@ module.exports = StyleSheet.create({
     fontSize: 14,
     fontFamily: 'Avenir',
     color: '#fff',
+  },
+  avatar: {
+    borderRadius: avatorWidth/2,
+    borderColor: '#20a3dd',
+    borderWidth: 1,
+    margin: 10,
+    width: avatorWidth,
+    height: avatorWidth
+  },
+  avatarContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   recieverContainer: {
     backgroundColor: '#ddd',
@@ -46,13 +63,17 @@ module.exports = StyleSheet.create({
   },
   footer: {
     flexDirection: 'row',
-    backgroundColor: '#eee',
-    width: '100%',
+    backgroundColor: '#fff',
+    width: window.width*.92,
     height: 50,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignSelf: 'center',
     position: 'absolute',
-    bottom: 0
+    bottom: 0,
+    borderRadius: 15,
+    borderWidth: 1,
+    borderColor: '#ddd',
+    margin: 10,
   },
   input: {
     paddingHorizontal: 20,
@@ -63,6 +84,8 @@ module.exports = StyleSheet.create({
     fontSize: 18,
   },
   sendIcon: {
-    margin: 5,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    //paddingRight: 10,
   },
 });

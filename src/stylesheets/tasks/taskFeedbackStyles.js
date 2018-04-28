@@ -2,7 +2,7 @@ import { Dimensions, StyleSheet } from 'react-native';
 var window = Dimensions.get('window');
 var width = window.width;
 var btnWidth = window.width*.6;
-var avatorWidth = window.width*.4;
+var avatorWidth = window.width*.25;
 //import config from '../config';
 
 //iPhone 7 height: 667, width: 375
@@ -13,6 +13,10 @@ module.exports = StyleSheet.create({
   },
   innerContainer: {
     margin: 25,
+    backgroundColor: '#fff',
+  },
+  editSaveBtn: {
+    justifyContent: 'flex-end',
   },
   title: {
     fontFamily: 'Avenir',
@@ -38,12 +42,18 @@ module.exports = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  personText: {
+  nameContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  nameText: {
     textAlign: 'center',
     fontFamily: 'Avenir',
     fontSize: 20,
     fontWeight: 'bold',
     color: '#777',
+    margin: 5
   },
   header: {
     marginTop: 0,
@@ -66,7 +76,7 @@ module.exports = StyleSheet.create({
   commentBox: {
     alignSelf: 'center',
     width: window.width*.7,
-    height: window.width*.2,
+    height: window.width*.15,
     borderColor: '#777',
     borderWidth: 1,
     borderRadius: 10,
@@ -92,5 +102,45 @@ module.exports = StyleSheet.create({
     textAlign: 'center',
     color: 'white',
     fontWeight: 'bold'
+  },
+  declineBtn: {
+    alignSelf: 'center',
+    backgroundColor: '#999',
+    borderRadius: btnWidth,
+    width: btnWidth,
+    padding: 8,
+    margin: 8
+  },
+  modalMsgContainer: {
+   marginTop: 20,
+   flex: .6,
+   justifyContent:'center',
+   alignItems: 'center',
+   alignSelf: 'center',
+ },
+ modalClose: {
+   width: width*.8,
+   backgroundColor: '#00C853',
+   padding: 5,
+ },
+ nameListContainer: {
+   width: width*.8,
+   backgroundColor: '#ecf0f1',
+   flex: .3,
+   justifyContent: 'center',
+   alignItems: 'center',
+ },
+ nameListBtn: {
+   justifyContent: 'center',
+   alignItems: 'center',
+ },
+  nameListText: {
+    fontSize: 20,
+    fontWeight: '400',
+    fontFamily: 'Avenir',
+    textAlign: 'center',
+    alignSelf: 'center',
+    margin: 3,
+    color: '#777',
   },
 });
