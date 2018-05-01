@@ -6,11 +6,11 @@ module.exports = StyleSheet.create({
     flex: 1,
     //justifyContent: 'center',
     alignItems: 'center',
-    //paddingTop: 25,
+    paddingTop: 25,
     //backgroundColor: '#E0F7FA'
   },
   logo: {
-    width: 100,
+    width: window.width,
     height: 100,
     justifyContent: 'center',
     alignItems: 'center',

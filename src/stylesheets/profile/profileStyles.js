@@ -8,12 +8,17 @@ var btnWidth = window.width*.6;
 module.exports =  StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
     backgroundColor: '#ecf0f1',
+  },
+  innerContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   editSaveBtn: {
     justifyContent: 'flex-end',
+    alignSelf: 'flex-end',
+    margin: 5
   },
   attributeContainer: {
     justifyContent: 'center',
@@ -73,6 +78,11 @@ module.exports =  StyleSheet.create({
     color: '#34495e',
     backgroundColor: '#fff'
   },
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignSelf: 'center',
+  },
   cancelButtonText: {
     textAlign: 'center',
     padding: 10,
@@ -81,11 +91,25 @@ module.exports =  StyleSheet.create({
     color: '#fff',
   },
   cancelButtonContainer: {
-    borderRadius: btnWidth/2,
-    backgroundColor: '#D50000',
+    borderRadius: btnWidth/4,
+    backgroundColor: '#ccc',
     alignSelf: 'center',
-    borderRadius: btnWidth,
-    width: btnWidth,
+    width: btnWidth/2,
+  },
+  confirmBtn: {
+    alignSelf: 'center',
+    backgroundColor: '#00C853',
+    borderRadius: btnWidth/4,
+    width: btnWidth/2,
+    padding: 8,
+    margin: 8
+  },
+  confirmBtnText: {
+    fontSize: 20,
+    fontFamily: 'Avenir',
+    textAlign: 'center',
+    color: 'white',
+    fontWeight: 'bold'
   },
   avatar: {
     borderRadius: avatorWidth/2,
@@ -99,6 +123,28 @@ module.exports =  StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  modalMsgContainer: {
+    backgroundColor: '#fff',
+    marginTop: 25,
+    flex: 1,
+    justifyContent:'center',
+    alignItems: 'center',
+    alignSelf: 'center',
+ },
+ modalClose: {
+    width: inputWidth,
+    backgroundColor: '#20a3dd',
+    padding: 5,
+ },
+ eulaContainer: {
+   width: inputWidth,
+ },
+ eulaText: {
+   marginTop: 24,
+   fontSize: 14,
+   fontFamily: 'Avenir',
+   color: '#34495e',
+ },
   footerContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',

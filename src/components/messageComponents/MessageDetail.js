@@ -32,9 +32,9 @@ export default class MessageDetail extends Component<Props> {
       <View style={styles.container}>
         <StatusBarBackground />
         <ScrollView>
-        {this.renderRecieverMsg()}
+        {this.renderUserMsg()}
         {this.renderSenderMsg(messageData)}
-        {this.renderRecieverMsg(messageData)}
+        {this.renderUserMsg(messageData)}
         </ScrollView>
         <View style={styles.footer}>
           <TextInput
@@ -80,9 +80,9 @@ export default class MessageDetail extends Component<Props> {
   _renderItem = ({item}) => (
     <View style={styles.listHeader}>
       <Text style={styles.title}>Messages</Text>
-      {this.renderRecieverMsg()}
+      {this.renderUserMsg()}
       {this.renderSenderMsg()}
-      {this.renderRecieverMsg()}
+      {this.renderUserMsg()}
     </View>
   );
 
@@ -130,11 +130,11 @@ export default class MessageDetail extends Component<Props> {
     );
   }
 
-  renderRecieverMsg(msgData) {
+  renderUserMsg(msgData) {
     return (
       <View style={styles.messageSection}>
-        <View style={styles.recieverContainer}>
-          <Text style={styles.recieverText}>
+        <View style={styles.userContainer}>
+          <Text style={styles.userText}>
           You want your tree to have some character.
           Make it special.
           I started painting as a hobby when I was little.

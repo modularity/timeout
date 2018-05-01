@@ -15,16 +15,15 @@ export default class CalendarList extends Component<Props> {
     super();
     this.state = {
         events: [
-          {activity_session_id: 123, activity_title: 'Title goes here', session_title: 'Session title here', open_date_pretty: '2/18/2018 9:00AM', close_date_pretty: '2/20/2018 5:00PM'},
-          {activity_session_id: 123, activity_title: 'Title goes here', session_title: 'Session title here', open_date_pretty: '2/18/2018 9:00AM', close_date_pretty: '2/20/2018 5:00PM'},
-          {activity_session_id: 123, activity_title: 'Title goes here', session_title: 'Session title here', open_date_pretty: '2/18/2018 9:00AM', close_date_pretty: '2/20/2018 5:00PM'}]
+          {activity_session_id: 1, activity_title: 'Title goes here', session_title: 'Session title here', open_date_pretty: '2/18/2018 9:00AM', close_date_pretty: '2/20/2018 5:00PM'},
+          {activity_session_id: 2, activity_title: 'Title goes here', session_title: 'Session title here', open_date_pretty: '2/18/2018 9:00AM', close_date_pretty: '2/20/2018 5:00PM'},
+          {activity_session_id: 3, activity_title: 'Title goes here', session_title: 'Session title here', open_date_pretty: '2/18/2018 9:00AM', close_date_pretty: '2/20/2018 5:00PM'}]
       }
   }
 
   render() {
       return (
         <View style={styles.container}>
-          <View style={styles.statusBar} />
              <FlatList
                data={this.state.events}
                extraData={this.state}

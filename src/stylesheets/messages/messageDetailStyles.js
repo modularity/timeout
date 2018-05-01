@@ -48,14 +48,14 @@ module.exports = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  recieverContainer: {
-    backgroundColor: '#ddd',
+  userContainer: {
+    backgroundColor: '#eee',
     width: bubbleWidth,
     borderRadius: 10,
     margin: 10,
     alignSelf: 'flex-start'
   },
-  recieverText: {
+  userText: {
     padding: 12,
     fontSize: 14,
     fontFamily: 'Avenir',
@@ -63,7 +63,7 @@ module.exports = StyleSheet.create({
   },
   footer: {
     flexDirection: 'row',
-    backgroundColor: '#fff',
+    backgroundColor: '#eee',
     width: window.width*.92,
     height: 50,
     justifyContent: 'center',
@@ -79,9 +79,9 @@ module.exports = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 10,
     flex: 1,
+    fontSize: 14,
     fontFamily: 'Avenir',
     color: '#555',
-    fontSize: 18,
   },
   sendIcon: {
     paddingHorizontal: 20,

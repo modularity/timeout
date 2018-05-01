@@ -16,6 +16,7 @@ export default class Consent extends Component<Props> {
     this.state = {
       message: '',
       showMsgModal: false,
+      eulaText: 'Just relax and let it flow. That easy. You can get away with a lot. As trees get older they lose their chlorophyll. I like to beat the brush. Sometimes you learn more from your mistakes than you do from your masterpieces. That is a son of a gun of a cloud. In your world you have total and absolute power. Nothing wrong with washing your brush. I think there is an artist hidden in the bottom of every single one of us. Just let this happen. We just let this flow right out of our minds. A little happy sunlight shining through there. Is that not fantastic that you can create an almighty tree that fast? In life you need colors. Volunteering your time, it pays you and your whole community fantastic dividends. You have to make almighty decisions when you are the creator. We spend so much of our life looking - but never seeing. Maybe there was an old trapper that lived out here and maybe one day he went to check his beaver traps, and maybe he fell into the river and drowned. Trees cover up a multitude of sins. If you do not like it - change it. It is your world. Let that brush dance around there and play. The first step to doing anything is to believe you can do it. See it finished in your mind before you ever start. Use what happens naturally, do not fight it. Water is like me. It is laaazy ... Boy, it always looks for the easiest way to do things I want everybody to be happy. That is what it is all about. The shadows are just like the highlights, but we are going in the opposite direction. Get away from those little Christmas tree things we used to make in school. Let us put some happy trees and bushes back in here. Work that paint. These things happen automatically. All you have to do is just let them happen.',
     }
     //firebase.analytics().setCurrentScreen('Login');
   }
@@ -30,7 +31,7 @@ export default class Consent extends Component<Props> {
             Please review the information below.
           </Text>
           <Text style={styles.text}>
-            Just relax and let it flow. That easy. You can get away with a lot. As trees get older they lose their chlorophyll. I like to beat the brush. Sometimes you learn more from your mistakes than you do from your masterpieces. That is a son of a gun of a cloud. ~\n In your world you have total and absolute power. Nothing wrong with washing your brush. I think there is an artist hidden in the bottom of every single one of us. Just let this happen. We just let this flow right out of our minds. A little happy sunlight shining through there. Is that not fantastic that you can create an almighty tree that fast? In life you need colors. Volunteering your time, it pays you and your whole community fantastic dividends. You have to make almighty decisions when you're the creator. We spend so much of our life looking - but never seeing. Maybe there was an old trapper that lived out here and maybe one day he went to check his beaver traps, and maybe he fell into the river and drowned. Trees cover up a multitude of sins. If you do not like it - change it. It is your world. Let that brush dance around there and play. The first step to doing anything is to believe you can do it. See it finished in your mind before you ever start. Use what happens naturally, do not fight it. Water's like me. It's laaazy ... Boy, it always looks for the easiest way to do things I want everybody to be happy. That's what it's all about. The shadows are just like the highlights, but we're going in the opposite direction. Get away from those little Christmas tree things we used to make in school. Let's put some happy trees and bushes back in here. Work that paint. These things happen automatically. All you have to do is just let them happen.
+            {this.state.eulaText}
           </Text>
         </ScrollView>
         <View style={styles.buttons}>
@@ -52,8 +53,8 @@ export default class Consent extends Component<Props> {
     //this.setState({showMsgModal: true});
   }
   confirmPressed() {
-    this.props.navigation.navigate('TabNav');
-    //this.props.navigation.navigate('NotEnrolled');
+    //this.props.navigation.navigate('TabNav');
+    this.props.navigation.navigate('NotEnrolled');
   }
 
   // display message when selecting to not confirm

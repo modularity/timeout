@@ -108,13 +108,20 @@ export default class Login extends Component<Props> {
   loginPressed() {
     var errorMsg = '';
     // check required fields: email, firstName, lastName, programCode
-    if (this.state.email === '') errorMsg += "Please enter your email. \n";
+    if (this.validateEmail()) errorMsg += "Please enter a valid email. \n";
     if (this.state.password === '') errorMsg += "Please enter your password.";
     if (errorMsg === '') {
       this.login();
     } else {
       Alert.alert("Login error", errorMsg);
     }
+  }
+
+  validateEmail() {
+    var email = this.state.email;
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var isValid = re.test(String(email).toLowerCase());
+    return !isValid;
   }
 
   // call signup API

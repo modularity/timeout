@@ -122,19 +122,44 @@ const MessageNav = StackNavigator({
 const CalendarNav = StackNavigator({
   CalendarView: { screen: CalendarView,
     navigationOptions: ({ navigation }) => ({
-      header: null,
-      }),
-    },
+      title: 'Calendar',
+      headerLeft: null,
+      headerStyle: { backgroundColor: '#20a3dd' },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        fontFamily: 'Avenir',
+        color: '#fff',
+      },
+    }),
+  },
   CalendarList: { screen: CalendarList,
     navigationOptions: ({ navigation }) => ({
-      header: null,
-      }),
+      title: 'My Calendar',
+      headerStyle: { backgroundColor: '#20a3dd' },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        fontFamily: 'Avenir',
+        color: '#fff',
+      },
+    }),
     },
   CalendarDetail: { screen: CalendarDetail,
     navigationOptions: ({ navigation }) => ({
-      header: null,
-      }),
-    },
+      title: 'Calendar',
+      headerStyle: { backgroundColor: '#20a3dd' },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        fontFamily: 'Avenir',
+        color: '#fff',
+      },
+    }),
+  },
 });
 
 // tabs navigation object
