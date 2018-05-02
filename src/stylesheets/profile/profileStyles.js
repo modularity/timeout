@@ -18,7 +18,7 @@ module.exports =  StyleSheet.create({
   editSaveBtn: {
     justifyContent: 'flex-end',
     alignSelf: 'flex-end',
-    margin: 5
+    marginRight: 5
   },
   attributeContainer: {
     justifyContent: 'center',

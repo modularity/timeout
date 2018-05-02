@@ -162,6 +162,23 @@ const CalendarNav = StackNavigator({
   },
 });
 
+// profile tab navigation object
+const ProfileNav = StackNavigator({
+  Profile: { screen: Profile,
+    navigationOptions: ({ navigation }) => ({
+      title: 'Profile',
+      headerStyle: { backgroundColor: '#20a3dd' },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        fontFamily: 'Avenir',
+        color: '#fff',
+      },
+    }),
+  },
+});
+
 // tabs navigation object
 const TabNav = TabNavigator({
   TaskNav: { screen: TaskNav,
@@ -185,7 +202,7 @@ const TabNav = TabNavigator({
                   <Icon name="calendar" size={25} color={tintColor} />
             }
         },
-  Profile: { screen: Profile,
+  ProfileNav: { screen: ProfileNav,
             navigationOptions: {
               tabBarLabel: 'Profile',
               tabBarIcon: ({ tintColor }) =>
