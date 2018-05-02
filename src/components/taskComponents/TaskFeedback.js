@@ -62,7 +62,7 @@ export default class TaskFeedback extends Component<Props> {
            onRequestClose={() => this.setState({showMsgModal: false}) }>
       <View style={styles.modalMsgContainer}>
         <View style={styles.modalClose}>
-          <TouchableOpacity onPress={() => this.setState({showMsgModal: false, postRecPreGraph: false}) }>
+          <TouchableOpacity onPress={() => this.setState({showMsgModal: false}) }>
             <Icon name="times" size={25} color="#ecf0f1"/>
           </TouchableOpacity>
         </View>
@@ -100,7 +100,9 @@ export default class TaskFeedback extends Component<Props> {
     return(
       <View>
         <View style ={styles.avatarContainer}>
-          <Image style={styles.avatar} source= {{uri: this.state.taskData.image}} />
+          <TouchableOpacity onPress={() => this.editName()}>
+            <Image style={styles.avatar} source= {{uri: this.state.taskData.image}} />
+          </TouchableOpacity>
         </View>
         <View style={styles.nameContainer}>
           <Text style={styles.nameText}>{this.state.taskData.names[0]}</Text>

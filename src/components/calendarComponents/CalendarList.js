@@ -8,26 +8,45 @@ import styles from '../../stylesheets/calendar/calendarListStyles';
 // import firebase from 'react-native-firebase';
 import InfoBtn from '../../utilities/InfoBtn';
 import StatusBarBackground from '../../utilities/StatusBarBackground';
+import moment from 'moment';
 
 type Props = {};
 export default class CalendarList extends Component<Props> {
   constructor() {
     super();
+    /*
+    const { params } = this.props.navigation.state;
+    // could check for null first
+    const data = params ? params.title : null;
     this.state = {
-        events: [
-          {activity_session_id: 1, activity_title: 'Title goes here', session_title: 'Session title here', open_date_pretty: '2/18/2018 9:00AM', close_date_pretty: '2/20/2018 5:00PM'},
-          {activity_session_id: 2, activity_title: 'Title goes here', session_title: 'Session title here', open_date_pretty: '2/18/2018 9:00AM', close_date_pretty: '2/20/2018 5:00PM'},
-          {activity_session_id: 3, activity_title: 'Title goes here', session_title: 'Session title here', open_date_pretty: '2/18/2018 9:00AM', close_date_pretty: '2/20/2018 5:00PM'}]
+        events: data,
       }
+    */
+    this.state = {
+      // original data
+      events: [{sessionID: 1, date: '2018-5-8', SessionStartTime: '11am', SessionStopTime: '12pm', SessionTitle: 'Session 1', isAvailable: 'yes' },
+        {sessionID: 2, date: '2018-5-9', SessionStartTime: '11am', SessionStopTime: '12pm', SessionTitle: 'Session 2', isAvailable: 'yes' },
+        {sessionID: 3, date: '2018-5-10', SessionStartTime: '10am', SessionStopTime: '11am', SessionTitle: 'Session 3', isAvailable: 'yes' },
+        {sessionID: 4, date: '2018-5-14', SessionStartTime: '4pm', SessionStopTime: '5pm', SessionTitle: 'Session 4', isAvailable: 'yes' },
+        {sessionID: 5, date: '2018-5-19', SessionStartTime: '2pm', SessionStopTime: '3pm', SessionTitle: 'Session 5', isAvailable: 'yes' },
+        {sessionID: 6, date: '2018-5-29', SessionStartTime: '4pm', SessionStopTime: '5pm', SessionTitle: 'Session 6', isAvailable: 'yes' }],
+      // transformed data for rending
+      data: [{'May 8, 2018': [{sessionID: 1, SessionStartTime: '11am', SessionStopTime: '12pm', SessionTitle: 'Session 1', isAvailable: 'yes' }]},
+          {'May 9, 2018': [{sessionID: 2, SessionStartTime: '11am', SessionStopTime: '12pm', SessionTitle: 'Session 2', isAvailable: 'yes' },
+                      {sessionID: 3, SessionStartTime: '10am', SessionStopTime: '11am', SessionTitle: 'Session 3', isAvailable: 'yes' }]},
+          {'May 14, 2018': [{sessionID: 4, SessionStartTime: '4am', SessionStopTime: '5pm', SessionTitle: 'Session 4', isAvailable: 'yes' }]},
+          {'May 19, 2018': [{sessionID: 5, SessionStartTime: '2am', SessionStopTime: '3pm', SessionTitle: 'Session 5', isAvailable: 'yes' }]}],
+    }
   }
-
+//
   render() {
+
       return (
         <View style={styles.container}>
              <FlatList
                data={this.state.events}
                extraData={this.state}
-               keyExtractor={item => item.activity_session_id}
+               keyExtractor={item => item.sessionID.toString()}
                ListEmptyComponent={this.noCalenderItems}
                renderItem={this.renderCalenderItem}
               />
@@ -35,24 +54,35 @@ export default class CalendarList extends Component<Props> {
       );
     }
 
-  // style={[styles.element, styles.rowContainer]}
+    // each day item may have mutliple events to render
     renderCalenderItem = ({item}) => (
-      <View>
-        <View style={[styles.element, styles.rowContainer]}>
-            <View style={styles.elementLeft}>
-              <Icon name="calendar" size={20} color="#34495e" />
-            </View>
-            <View style={styles.elementRight}>
-              <View style={styles.eventContainer}>
-                   <Text style={[styles.eventTitle, styles.textDarkBlue]}>{item.activity_title}</Text>
-                   <Text style={[styles.eventDetail, styles.textDarkBlue]}>{item.session_title}</Text>
-                   <Text style={[styles.eventDate, styles.textDarkBlue]}>{item.open_date_pretty} - {item.close_date_pretty}</Text>
+        <View style={styles.itemContainer}>
+          <Text style={[styles.eventDate]}>{this.parseDate(item.date)}</Text>
+          <View style={styles.seperator}/>
+          <View style={[styles.element, styles.rowContainer]}>
+              <View style={styles.elementLeft}>
+                <Icon name="circle" size={20} color={this.color(item.isAvailable)} />
               </View>
-            </View>
+              <View style={styles.elementRight}>
+                <View style={styles.eventContainer}>
+                     <Text style={[styles.eventDescription]}>{item.SessionTitle} from {item.SessionStartTime}-{item.SessionStopTime} confirmed. </Text>
+                </View>
+              </View>
+          </View>
+          <View style={styles.seperator}/>
         </View>
-        <View style={styles.seperator}/>
-      </View>
     );
+
+  parseDate(date) {
+    return moment(date, 'YYYY-MM-DD').format('MMM DD, YYYY');
+  }
+  color(isAvailable) {
+    const calConfig = {'no': {selected: true, color: '#fdba33', shape:'circle'},
+      'yes': {selected: true, color: '#71c172', shape:'circle'},
+      'na': {selected: true, color: '#ccc', shape:'square'}
+    }
+    return calConfig[isAvailable].color;
+  }
 
    // default for when a selected programCode has zero entries
    noCalenderItems = () => (

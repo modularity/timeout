@@ -4,12 +4,17 @@ var window = Dimensions.get('window');
 module.exports = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    backgroundColor: '#fff'
   },
   statusBar: {
     height: 50,
     backgroundColor: '#60a0e5'
     //backgroundColor: '#3b5998'
+  },
+  listBtn: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    margin: 8,
   },
    element: {
      flexDirection: 'row',
@@ -81,4 +86,18 @@ module.exports = StyleSheet.create({
      color: '#34495e',
      backgroundColor: 'transparent',
    },
+   seperator: {
+     borderWidth: 1,
+     borderColor: '#ccc',
+     margin: 10,
+   },
+   legendContainer: {
+     justifyContent: 'space-between',
+     alignItems: 'stretch'
+   },
+   legendItem: {
+     flexDirection: 'row',
+     justifyContent: 'flex-start',
+     margin: 8,
+   }
 });

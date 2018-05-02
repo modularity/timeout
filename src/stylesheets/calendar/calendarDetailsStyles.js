@@ -1,42 +1,120 @@
 import { Dimensions, StyleSheet } from 'react-native';
 var window = Dimensions.get('window');
-
-const styles = StyleSheet.create({
+var btnWidth = window.width*.3;
+module.exports = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 25,
-    backgroundColor: '#E0F7FA'
+    backgroundColor: '#fff',
+    justifyContent: 'center',
   },
-  listHeader: {
-    backgroundColor: '#00BCD4',
+  statusBar: {
+    height: 50,
+    backgroundColor: '#60a0e5'
+    //backgroundColor: '#3b5998'
   },
-  imageHeader:{
-    flexGrow:1,
-    height:window.height*.2,
-    width:null,
-    alignItems: 'center',
-    justifyContent:'center'
+  itemContainer: {
+    //justifyContent: 'center'
   },
-  divider:{
-    borderWidth: 0.5,
-    borderColor: '#009688'
-  },
-  listContent: {
-    flex: 1,
-    flexDirection: 'row',
-  },
-  title: {
-    padding: 10,
-    fontSize: 40,
-    fontFamily: 'Avenir',
-    textAlign: 'center',
-    color: 'white',
-    backgroundColor: '#00C853'
-  },
-  text: {
-    marginTop: 24,
-    fontSize: 20,
-    fontFamily: 'Avenir',
-    color: '#34495e',
-  }
+   element: {
+     flexDirection: 'row',
+     justifyContent: 'space-between',
+     alignItems: 'center',
+     //backgroundColor: '#60a0e5',
+     backgroundColor: 'white',
+     padding: 20,
+   },
+   rowContainer: {
+     flexDirection: 'row',
+     justifyContent: 'space-around',
+     alignItems: 'center'
+   },
+   eventContainer: {
+     marginLeft: 10,
+     justifyContent: 'center',
+     alignItems: 'center',
+   },
+   elementLeft: {
+     flexDirection: 'row',
+     justifyContent: 'flex-start'
+   },
+   elementRight: {
+     flexDirection: 'row',
+     justifyContent: 'flex-end'
+   },
+   eventDate: {
+     textAlign: 'center',
+     color: '#20a3dd',
+     fontWeight: 'bold',
+     fontSize: 20,
+     padding: 8,
+   },
+   eventDescription: {
+     textAlign: 'left',
+     fontFamily: 'Avenir',
+     fontWeight: 'bold',
+     fontSize: 12,
+     color: '#777',
+   },
+   eventDetail: {
+     //color: 'white',
+     fontSize: 16,
+     padding: 3,
+   },
+   seperator: {
+     borderWidth: 1,
+     borderColor: '#ccc',
+   },
+   btnRow: {
+     flexDirection: 'row',
+     justifyContent: 'space-between',
+     alignSelf: 'center'
+   },
+   editBtn: {
+     alignSelf: 'center',
+     backgroundColor: '#ccc',
+     borderRadius: btnWidth,
+     width: btnWidth,
+     padding: 8,
+     margin: 8
+   },
+   confirmBtn: {
+     alignSelf: 'center',
+     backgroundColor: '#00C853',
+     borderRadius: btnWidth,
+     width: btnWidth,
+     padding: 8,
+     margin: 8
+   },
+   confirmBtnText: {
+     fontSize: 20,
+     fontFamily: 'Avenir',
+     textAlign: 'center',
+     color: 'white',
+     fontWeight: 'bold'
+   },
+   declineBtn: {
+     alignSelf: 'center',
+     backgroundColor: '#fdba33',
+     borderRadius: btnWidth,
+     width: btnWidth,
+     padding: 8,
+     margin: 8
+   },
+   noEventsContainer: {
+     flex: 1,
+     justifyContent: 'center',
+     alignSelf: 'center'
+   },
+   noEventsText: {
+     fontSize: 20,
+     fontWeight: '400',
+     fontFamily: 'Avenir',
+     textAlign: 'center',
+     alignSelf: 'center',
+     margin: 3,
+     padding: 10,
+     marginBottom: 30,
+     color: '#34495e',
+     backgroundColor: 'transparent',
+   },
 });

@@ -4,12 +4,15 @@ var window = Dimensions.get('window');
 module.exports = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    backgroundColor: '#fff',
   },
   statusBar: {
     height: 50,
     backgroundColor: '#60a0e5'
     //backgroundColor: '#3b5998'
+  },
+  itemContainer: {
+    justifyContent: 'center'
   },
    element: {
      flexDirection: 'row',
@@ -37,32 +40,28 @@ module.exports = StyleSheet.create({
      flexDirection: 'row',
      justifyContent: 'flex-end'
    },
-   textDarkBlue: {
-     color: '#34495e'
-   },
-   eventTitle: {
-     //color: 'white',
+   eventDate: {
      textAlign: 'center',
-     fontWeight: "500",
-     fontSize: 18,
-     padding: 3,
+     color: '#20a3dd',
+     fontWeight: 'bold',
+     fontSize: 20,
+     padding: 8,
+   },
+   eventDescription: {
+     textAlign: 'left',
+     fontFamily: 'Avenir',
+     fontWeight: 'bold',
+     fontSize: 12,
+     color: '#777',
    },
    eventDetail: {
      //color: 'white',
      fontSize: 16,
      padding: 3,
    },
-   eventDate: {
-     //color: 'white',
-     fontWeight: "500",
-     fontSize: 10,
-     padding: 3,
-   },
    seperator: {
      borderWidth: 1,
-     //borderColor: 'white'
-     borderColor: '#34495e',
-     //borderColor: '#3b5998',
+     borderColor: '#ccc',
    },
    noEventsContainer: {
      flex: 1,
